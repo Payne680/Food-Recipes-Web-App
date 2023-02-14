@@ -26,7 +26,7 @@ function HomePage() {
         </nav>
         <h1>Welcome to Delicia</h1>
       </div>
-      <h2>Below are some reciepes</h2>
+      <h2>Below are some recipes</h2>
       <div className="card">
         <h3>Google</h3>
         <p>Everything is here</p>
