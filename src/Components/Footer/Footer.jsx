@@ -11,7 +11,7 @@ function Footer() {
         <h1>Footer</h1>
       </div>
       <div className="info">
-        <h3>© 2023 - Rebase Academy license!</h3>
+        <h3 className="text">© 2023 - Rebase Academy license!</h3>
         <div className="banks">
           <div className="bank-cards">
             <img src={visa} alt="visa" />
