@@ -14,7 +14,7 @@ function Card() {
         <button className="btn" type="button">
           X
         </button>
-        <img className="img" src={chicken} alt="chicken" />
+        <img className="img" src={chicken} alt="Achu" />
         <h5>Chicken</h5>
         <p>Click for more details</p>
         <button className="desc" type="button">
