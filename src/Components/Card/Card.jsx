@@ -10,11 +10,11 @@ import springrollegg from './springrollegg.jpg';
 function Card() {
   return (
     <div>
-    <div className="add">
-    <button className="add-btn" type="button">
-      <i className="fa-solid fa-circle-plus" />
-    </button>
-  </div>
+      <div className="add">
+        <button className="add-btn" type="button">
+          <i className="fa-solid fa-circle-plus" />
+        </button>
+      </div>
       <div className="card">
         <button className="btn" type="button">
           X
