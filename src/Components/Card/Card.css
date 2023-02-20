@@ -64,8 +64,8 @@
 
   .add-btn {
     cursor: pointer;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     padding: 20px;
     border-radius: 90px;
     color: rgb(73, 73, 75);
@@ -79,4 +79,8 @@
 
 .fa-solid {
   font-size: 100px;
+}
+
+h5 {
+  text-align: center;
 }

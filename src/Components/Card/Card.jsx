@@ -14,6 +14,7 @@ function Card() {
         <button className="add-btn" type="button">
           <i className="fa-solid fa-circle-plus" />
         </button>
+        <h5>Add Recipe</h5>
       </div>
       <div className="card">
         <button className="btn" type="button">
