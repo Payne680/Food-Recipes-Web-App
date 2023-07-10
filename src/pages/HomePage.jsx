@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from './Card/Card';
-import Footer from './Footer/Footer';
+import Card from '../Components/Card/Card';
+import Footer from '../Components/Footer/Footer';
 import './HomePage.css';
-import NavBar from './NavBar/NavBar';
+import NavBar from '../Components/NavBar/NavBar';
 
 function HomePage() {
   return (
