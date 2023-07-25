@@ -3,23 +3,34 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
 import Data from '../data/data.json';
-import { getFromLocalStorage, saveToLocalStorage } from '../service/useStorage';
+import { LOCALSTORAGE } from '../service/useStorage';
 
 const FoodContext = createContext();
 
 export function FoodContextProvider({ children }) {
   const [foodData, setFoodData] = useState(null);
 
-  useEffect(() => {
-    if (!getFromLocalStorage('foodData')) saveToLocalStorage('foodData', Data);
+  const editFood = (id, formData) => {
+    const updates = LOCALSTORAGE.get('foodData').map((food) => {
+      if (food.id === id) return formData;
 
-    const data = getFromLocalStorage('foodData');
+      return food;
+    });
+
+    LOCALSTORAGE.save('foodData', updates);
+    setFoodData([...updates]);
+  };
+
+  useEffect(() => {
+    if (!LOCALSTORAGE.get('foodData')) LOCALSTORAGE.save('foodData', Data);
+
+    const data = LOCALSTORAGE.get('foodData');
 
     setFoodData(data);
   }, []);
 
   return (
-    <FoodContext.Provider value={{ foodData, setFoodData }}>
+    <FoodContext.Provider value={{ foodData, setFoodData, editFood }}>
       {children}
     </FoodContext.Provider>
   );

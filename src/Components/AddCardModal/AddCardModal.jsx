@@ -1,10 +1,17 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
 import './AddCardModal.css';
+import { useFoodContext } from '../../context/FoodContext';
 
-function AddCardModal({ visible, onClose, handleCardAdd }) {
+function AddCardModal({
+  visible,
+  onClose,
+  foodToEdit,
+  setFoodToEdit,
+  handleCardAdd,
+}) {
   const customStyles = {
     background: 'rgb(58 58 58)',
     padding: '10px',
@@ -12,9 +19,39 @@ function AddCardModal({ visible, onClose, handleCardAdd }) {
     height: 'fit-content',
     maxWidth: '30rem',
   };
-  const [title, setTitle] = useState('');
-  const [detail, setDetail] = useState('');
-  const [url, setUrl] = useState('');
+
+  const [formData, setFormData] = useState({
+    title: '',
+    description: '',
+    url: '',
+  });
+
+  const { editFood } = useFoodContext();
+
+  // const endForm = () => {
+  //   setFormData({ title: '', description: '', url: '' });
+  //   onclose();
+  // };
+
+  const handleSave = () => {
+    if (foodToEdit) {
+      editFood(foodToEdit.id, formData);
+      setFoodToEdit(null);
+    } else {
+      const data = formData;
+      handleCardAdd({ ...data });
+    }
+
+    onclose();
+  };
+
+  const handleChange = ({ target: { name, value } }) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  useEffect(() => {
+    if (foodToEdit) setFormData({ ...foodToEdit });
+  }, [foodToEdit]);
 
   return (
     <Rodal customStyles={customStyles} visible={visible} onClose={onClose}>
@@ -24,8 +61,9 @@ function AddCardModal({ visible, onClose, handleCardAdd }) {
           <input
             type="text"
             className="input"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
           />
         </div>
         <div>
@@ -33,32 +71,34 @@ function AddCardModal({ visible, onClose, handleCardAdd }) {
           <input
             type="text"
             className="input"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
+            name="url"
+            value={formData.url}
+            onChange={handleChange}
           />
         </div>
 
         <div>
-          <span className="label">Detail</span>
+          <span className="label">description</span>
           <textArea
             rows={10}
             className="input"
-            value={detail}
+            value={formData.description}
+            placeholder="food description"
             type="text"
-            onChange={(e) => setDetail(e.target.value)}
+            name="description"
+            onChange={handleChange}
           />
         </div>
 
         <button
           type="button"
-          disabled={title === '' && detail === '' && url === ''}
+          disabled={
+            formData.title.trim() === '' ||
+            formData.description.trim() === '' ||
+            formData.url.trim() === ''
+          }
           className="saveButton"
-          onClick={() => {
-            handleCardAdd(title, detail, url);
-            setDetail('');
-            setTitle('');
-            setUrl('');
-          }}
+          onClick={handleSave}
         >
           Add
         </button>

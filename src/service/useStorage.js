@@ -1,5 +1,22 @@
-export const getFromLocalStorage = (key) =>
-  JSON.parse(localStorage.getItem(key));
+/* eslint-disable max-classes-per-file */
+export class LOCALSTORAGE {
+  static get = (key) => JSON.parse(localStorage.getItem(key));
 
-export const saveToLocalStorage = (key, value) =>
-  localStorage.setItem(key, JSON.stringify(value));
+  static save = (key, value) =>
+    localStorage.setItem(key, JSON.stringify(value));
+
+  static remove = (key) => localStorage.removeItem(key);
+
+  static clear = () => localStorage.clear();
+}
+
+export class SESSIONSTORAGE {
+  static get = (key) => JSON.parse(sessionStorage.getItem(key));
+
+  static save = (key, value) =>
+    sessionStorage.setItem(key, JSON.stringify(value));
+
+  static remove = (key) => sessionStorage.removeItem(key);
+
+  static clear = () => sessionStorage.clear();
+}
