@@ -7,7 +7,6 @@ import swal from 'sweetalert';
 import chicken from './chicken.jpg';
 import asparagus from './asparagus.jpg';
 import pancake from './pancake.jpg';
-import tomatoe from './tomatoes.jpg';
 import springrollegg from './springrollegg.jpg';
 import salad from './salad.jpg';
 import { useFoodContext } from '../../context/FoodContext';
@@ -109,7 +108,7 @@ function Card() {
           </button>
         </div>
       ))}
-    </div>
+    </div>~
   );
 }
 
