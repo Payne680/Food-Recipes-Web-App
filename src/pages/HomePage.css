@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: verdana;
+}
+
+h1 {
+  display: flex;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 4rem;
+  font-style: italic;
+  font-family: 'Sofia';
+  text-shadow: 3px 3px 3px #ababab;
+  color: #fff;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 4rem;
+  font-style: italic;
+  font-family: 'Sofia';
+  text-shadow: 3px 3px 3px #ababab;
+  color: rgb(73, 73, 75);
+}
+
+

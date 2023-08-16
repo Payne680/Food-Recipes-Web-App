@@ -1,0 +1,30 @@
+#abb {
+  width: 100%;
+  max-height: 60vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/src/Images/footerbg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.text {
+  color: #fff;
+  text-align: left;
+  margin-top: 18px;
+  font-family: 'sofi';
+}
+
+.banks {
+  display: flex;
+  margin-left: 50%;
+  margin-top: 15px;
+}
+.bank-cards {
+  margin-left: 20px;
+}
+
+.info {
+  display: flex;
+  background-color: #171413;
+  height: 100px;
+}

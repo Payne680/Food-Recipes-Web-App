@@ -1,0 +1,51 @@
+[
+  {
+    "id": 0,
+    "name": "Chicken",
+    "description": "lorem ipsum",
+    "img": "url",
+    "fav": false
+  },
+  {
+    "id": 1,
+    "name": "Asparagus",
+    "description": "lorem ipsum",
+    "img": "url",
+    "fav": false
+  },
+  {
+    "id": 2,
+    "name": "Pancake",
+    "description": "lorem ipsum",
+    "img": "url",
+    "fav": false
+  },
+  {
+    "id": 3,
+    "name": "Tomatoe Salad",
+    "description": "lorem ipsum",
+    "img": "url",
+    "fav": false
+  },
+  {
+    "id": 4,
+    "name": "Vegetable Salad",
+    "description": "lorem ipsum",
+    "img": "url",
+    "fav": false
+  },
+  {
+    "id": 5,
+    "name": "Springrollegg",
+    "description": "lorem ipsum",
+    "img": "url",
+    "fav": false
+  },
+  {
+    "id": 6,
+    "name": "Rice and Beans",
+    "description": "lorem ipsum",
+    "img": "url",
+    "fav": true
+  }
+]
